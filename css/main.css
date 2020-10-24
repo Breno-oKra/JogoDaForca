@@ -8,7 +8,7 @@ a , a:hover, a:visited{
 }
 
 body{
-    background-color: ;
+    background-color: #fff ;
 }
 header{
     display: flex;
@@ -28,6 +28,7 @@ header .boxalgnLinks .algnLinks{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    color: #fff;
 }
 .interface{
     width: 100%;
