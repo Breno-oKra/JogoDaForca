@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+<body>
+    <header>
+        <h1>Jogo da Forca</h1>
+
+        <div class="boxalgnLinks">
+                <a class="algnLinks" target="_blank" href="https://www.instagram.com/oliveirakra/"><img width="40px" src="./imgs/iconfinder_social-instagram-new-circle_1164349.svg" alt=""></a>
+                <a class="algnLinks" href=""><img  src="./imgs/iconfinder_github-social-media_765246.svg" alt="">link do Projeto</a>
+        </div>
+       
+    </header>
+
+    <div class="interface">
+
+        <!-- começa a div que contem o campo de inserir os nomes dos jogadores-->
+        <div id="Modal_1-names" >
+            <div class="AlignModal_1" >
+                <div class="alignInputsImgs">
+                    <img class="imgsPlayers" src="./imgs/img_Jogador-1.png" alt="">
+                    <input id="player1" maxlength="25" class="inputs" type="text" placeholder="jogador 1">
+                </div>
+                <div class="alignInputsImgs">
+                    <img class="imgsPlayers" src="./imgs/img_Jogador-2.png" alt="">
+                    <input id="player2" maxlength="25" class="inputs" type="text" placeholder="jogador 2">
+                </div>
+                <button class="btn-Start" onclick="verificaNomes()">Play</button>
+            </div>
+        </div>
+        <!--termina a div campo dos jogadroes -->
+        <div id="Game">
+            <div class="boxForca">
+                <div id="letrasErradas" >
+
+                </div>
+                <div  id="forca">
+
+                </div>
+            </div>
+            <div id="janela1">
+
+                <div class="boxVezJogador">
+                    <span id="name"></span>
+                    <div class="janelaVezJogador">
+                        <span id="imgPlay"></span>
+                        <input id="inputPalavra" class="inputDigita" maxlength="50" type="password">
+                        <button onclick="recuperaPalavra()">Começa</button>
+
+                        <div class="boxdePontos">
+                            
+                            <div class="boxPontsoJogadores">
+                                <span id="nameJogador1"></span>
+                                <div class="boxPontosJogador1" >
+                                    <span id="pontosJogador1">0</span>
+                                </div>
+                            </div>
+                            <div class="boxPontsoJogadores">
+                                <span id="nameJogador2"></span>
+                                <div class="boxPontosJogador2" >
+                                    <span id="pontosJogador2">0</span>
+                                </div>
+                            </div>
+                           
+                            
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div id="janela2">
+                    <div id="tablePalavras" >
+
+                    </div>
+
+                    <div id="camPoJogadorDigita">
+                        <span id="imgRespondePlayer"></span>
+                        <input width="200px" id="jogadorDigta" type="text" placeholder="digite aki">
+                        <a  onclick="digitoJogador()"><img class="imgIcons" src="./imgs/2x/baseline_send_black_18dp.png" alt="enviar"></a >
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="myModal" name="modal">
+        <div class="boxdePontos">
+            <div id="boxPontosPlay1">
+                <span id="winPlay1"></span>
+                <span id="nameJogador1-modal"></span>
+                <span id="PontosPlay1-modal"  class="pontosJogador1-modal">0</span>
+            </div>
+            <div  id="boxPontosPlay2" >
+                <span id="winPlay2"></span>
+                <span id="nameJogador2-modal"></span>
+                <span id="PontosPlay2-modal" class="pontosJogador2-modal">0</span>
+            </div>
+        </div>
+
+        <button id="Proximapartida" onclick="ProximaPartida()"><img src="./imgs/2x/baseline_cached_black_18dp.png" alt=""></button>
+    </div>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/verificacoes.js"></script>
+    <script type="text/javascript" src="./js/palavrasDaForca.js"></script>
+</body>
+</html>
