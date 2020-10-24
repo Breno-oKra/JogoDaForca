@@ -17,7 +17,9 @@ var jogadorDigta = document.getElementById("jogadorDigta")
 var palavra = []
 var letrasDigitadas = []
 //________________________________________________________________________________________
-
+var names = document.getElementById("name")
+var imgPlay = document.getElementById("imgPlay")
+var imgRespondePlayer = document.getElementById("imgRespondePlayer")
 //---------------------recupera os campos do placar de pontos--------------------------------------
 var nameJogador1 = document.getElementById("nameJogador1")
 var nameJogador2 = document.getElementById("nameJogador2")
@@ -198,9 +200,7 @@ function ProximaPartida(){
  //--------------------------------------------------------------------------------------------------
 //-------- recupera Campos dos jogadores -- Jogador1 -----------------
 
-var names = document.getElementById("name")
-var imgPlay = document.getElementById("imgPlay")
-var imgRespondePlayer = document.getElementById("imgRespondePlayer")
+
 
 function vezPlayer1(){
     var img = document.createElement("img")
