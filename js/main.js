@@ -205,7 +205,7 @@ var imgRespondePlayer = document.getElementById("imgRespondePlayer")
 function vezPlayer1(){
     var img = document.createElement("img")
     var nami = document.createElement("p")
-    img.setAttribute("src", "../imgs/img_jogador-1.png")
+    img.setAttribute("src", "./imgs/img_jogador-1.png")
     img.setAttribute("width", "50%")
     console.log("breno")
     nami.innerHTML = `<h4> vez de ${jogador1.value}</h4>`
@@ -221,7 +221,7 @@ function vezPlayer1(){
 function vezPlayer2(){
     var img = document.createElement("img")
     var nami = document.createElement("p")
-    img.setAttribute("src", "../imgs/img_jogador-2.png")
+    img.setAttribute("src", "./imgs/img_jogador-2.png")
     img.setAttribute("width", "50%")
   
     nami.innerHTML = `<h4> vez de ${jogador2.value}</h4>`
