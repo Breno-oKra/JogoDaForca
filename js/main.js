@@ -1,15 +1,14 @@
 //-------- esconde as div iniciais----------------------------------
 $("#Game").hide()
 $("#camPoJogadorDigita").hide()
-$("#Proximapartida").hide()
 $("#myModal").hide()
 //__________________________________________________________________
 
 
 var controleLenghtPalavra = 0
 //------------- valores -------------------------------------------
-var jogador1 = document.getElementById("player1")
-var jogador2 = document.getElementById("player2")
+const jogador1 = document.getElementById("player1")
+const jogador2 = document.getElementById("player2")
 var inputPalavra = document.getElementById("inputPalavra")
 var jogadorDigta = document.getElementById("jogadorDigta")
 
@@ -28,10 +27,10 @@ var pontosJogador2 = document.getElementById("pontosJogador2")
 //______________________________________________________________________________________________
 
 //--------------------recupera os campos do placar de pontos da modal-------------------------------
-var PontosPlay1Modal = document.getElementById("PontosPlay1-modal")
-var PontosPlay2Modal = document.getElementById("PontosPlay2-modal")
-var winPlay2 = document.getElementById("nameJogador2-modal")
-var winPlay1 = document.getElementById("nameJogador1-modal")
+const PontosPlay1Modal = document.getElementById("PontosPlay1-modal")
+const PontosPlay2Modal = document.getElementById("PontosPlay2-modal")
+const winPlay2 = document.getElementById("nameJogador2-modal")
+const winPlay1 = document.getElementById("nameJogador1-modal")
 //______________________________________________________________________________________________
 
 
@@ -74,20 +73,9 @@ function verificaNomes(){
 function recuperaPalavra(){
 
     if((inputPalavra.value !== undefined) && (inputPalavra.value !== "")){
-        
-        if(controleDplayer == 0){
-            var imgJogador2 = document.createElement("img")
-            imgJogador2.setAttribute("src", "./imgs/img_jogador-2.png")
-            imgJogador2.setAttribute("width", "100")
-            imgRespondePlayer.appendChild(imgJogador2)
-        }
-        if(controleDplayer == 1){
-            var imgJogador1 = document.createElement("img")
-            imgJogador1.setAttribute("src", "./imgs/img_jogador-1.png")
-            imgJogador1.setAttribute("width", "100")
-            imgRespondePlayer.appendChild(imgJogador1)
-        }
-    
+        $("#btn-começa").attr("disabled", true);
+        $("#btn-começa").css("background-color", "#aaa69d"); 
+
         var len = palavra.length
         palavra.splice(0,len)
         
@@ -100,10 +88,13 @@ function recuperaPalavra(){
             tablePalavras.removeChild(tablePalavras.firstChild);
         }
 
-        // -----------------------------------------------------------------------------------------
-    
+        //_______________________________________________________________________________________________
+
+        //--------- desativa o buttão começar----------------------------------------------------
         $('#inputPalavra').attr("disabled", true);
         $('#inputPalavra').css("background-color", "#aaa69d"); 
+        //______________________________________________________________________________________________
+        
         dividePalavra(inputPalavra.value)
         palavra.forEach(esconderItem)
         $("#camPoJogadorDigita").slideDown()
@@ -165,32 +156,42 @@ function ProximaPartida(){
          
      }
      while (tablePalavras.hasChildNodes()) {  
-         //enquanto tive child removeremos o indice 1(firstChild ou [0]) até nao ficar mais nem um
+
          tablePalavras.removeChild(tablePalavras.firstChild);
      }
      while (letrasErradas.hasChildNodes()) {  
-         //enquanto tive child removeremos o indice 1(firstChild ou [0]) até nao ficar mais nem um
+
          letrasErradas.removeChild(letrasErradas.firstChild);
      }
      while ((imgRespondePlayer.hasChildNodes()) && (winPlay2.hasChildNodes()) && (winPlay1.hasChildNodes())) {  
-         //enquanto tive child removeremos o indice 1(firstChild ou [0]) até nao ficar mais nem um
+
          imgRespondePlayer.removeChild(imgRespondePlayer.firstChild);
          winPlay1.removeChild(winPlay1.firstChild);
          winPlay2.removeChild(winPlay2.firstChild);
      }
+     //------ rezeta a forca ---------------------------------------
      forca.setAttribute("src", "./imgs/forca1.png")
      forca.setAttribute("class", "imgForca")
      Campoforca.appendChild(forca)
+     //____________________________________________________________
+     //-------- retorna as classes de origem da modal ------------------------
      PontosPlay1Modal.setAttribute("class", "pontosJogador1-modal")
      PontosPlay2Modal.setAttribute("class", "pontosJogador2-modal")
+     //______________________________________________________________________
+     //--------- rezeta campo do jogador digitar e a palvra escolhida-----------------
      jogadorDigta.value = "" 
      inputPalavra.value = ""
+     //______________________________________________________________________
      controleLenghtPalavra = 0
      contadorDpontos = 0
      contadorDeErros = 0
      letrasDigitadas = []
+
+    $("#btn-começa").attr("disabled", false);
+    $("#btn-começa").css("background-color", "#fff"); 
+
+
      $("#Game").hide()
-     $("#Proximapartida").hide()
      $("#camPoJogadorDigita").hide()
      $('#inputPalavra').attr("disabled", false);
      $('#inputPalavra').css("background-color", "#ffffff"); 
@@ -210,6 +211,11 @@ function vezPlayer1(){
     console.log("breno")
     nami.innerHTML = `<h4> vez de ${jogador1.value}</h4>`
 
+    var imgJogador2 = document.createElement("img")
+    imgJogador2.setAttribute("src", "./imgs/img_jogador-2.png")
+    imgJogador2.setAttribute("width", "100")
+    imgRespondePlayer.appendChild(imgJogador2)
+
     imgPlay.appendChild(img)
     names.appendChild(nami)
     
@@ -225,6 +231,11 @@ function vezPlayer2(){
     img.setAttribute("width", "50%")
   
     nami.innerHTML = `<h4> vez de ${jogador2.value}</h4>`
+
+    var imgJogador1 = document.createElement("img")
+    imgJogador1.setAttribute("src", "./imgs/img_jogador-1.png")
+    imgJogador1.setAttribute("width", "100")
+    imgRespondePlayer.appendChild(imgJogador1)
 
     imgPlay.appendChild(img)
     names.appendChild(nami)
