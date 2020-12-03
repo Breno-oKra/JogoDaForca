@@ -206,13 +206,13 @@ function ProximaPartida(){
 function vezPlayer1(){
     var img = document.createElement("img")
     var nami = document.createElement("p")
-    img.setAttribute("src", "/imgs/img_jogador-1.png")
+    img.setAttribute("src", "./imgs/img_Jogador-1.png")
     img.setAttribute("width", "50%")
     console.log("breno")
     nami.innerHTML = `<h4> vez de ${jogador1.value}</h4>`
 
     var imgJogador2 = document.createElement("img")
-    imgJogador2.setAttribute("src", "/imgs/img_jogador-2.png")
+    imgJogador2.setAttribute("src", "./imgs/img_Jogador-2.png")
     imgJogador2.setAttribute("width", "100")
     imgRespondePlayer.appendChild(imgJogador2)
 
@@ -227,13 +227,13 @@ function vezPlayer1(){
 function vezPlayer2(){
     var img = document.createElement("img")
     var nami = document.createElement("p")
-    img.setAttribute("src", "/imgs/img_Jogador-2.png")
+    img.setAttribute("src", "./imgs/img_Jogador-2.png")
     img.setAttribute("width", "50%")
   
     nami.innerHTML = `<h4> vez de ${jogador2.value}</h4>`
 
     var imgJogador1 = document.createElement("img")
-    imgJogador1.setAttribute("src", "/imgs/img_jogador-1.png")
+    imgJogador1.setAttribute("src", "./imgs/img_Jogador-1.png")
     imgJogador1.setAttribute("width", "100")
     imgRespondePlayer.appendChild(imgJogador1)
 
